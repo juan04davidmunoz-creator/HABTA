@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pantalla de Login - Habita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logo-habita.jpg" alt="Logo Habita">
+    </div>
+
+    <h2>Iniciar Sesión</h2>
+
+    <form id="loginForm">
+        <label>Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingrese su usuario" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+
+        <div class="actions-row">
+          <label class="remember">
+            <input type="checkbox" id="remember"> Recordarme
+          </label>
+          <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="primary">Ingresar</button>
+    </form>
+
+    <a href="registro.html" class="link">Crear cuenta</a>
+</div>
+
+<script src="script.js"></script>
+<

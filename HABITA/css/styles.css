@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* TOPBAR */
+.topbar {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* HEADER */
+.main-header {
+    background-color: #0066cc;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+.presentation img {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* ROOMS */
+.room-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.room {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+/* FORM */
+.booking form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking input {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.booking button {
+    padding: 12px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
