@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas - Habita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logo-habita.jpg" alt="Logo Habita">
+    </div>
+
+<h2>Reservas</h2>
+
+<div class="card">
+    <form id="reservaForm">
+        <label>Servicio:</label>
+        <select required>
+            <option value="">Seleccione un servicio</option>
+            <option>Servicio 1</option>
+            <option>Servicio 2</option>
+            <option>Servicio 3</option>
+        </select>
+
+        <label>Fecha:</label>
+        <input type="date" required>
+
+        <label>Hora:</label>
+        <input type="time" required>
+
+        <button type="submit" class="primary">Confirmar Reserva</button>
+    </form>
+    <div class="success-box">Reserva realizada con éxito.</div>
+</div>
+
+<a href="menu.html" class="link">Volver al Menú</a>
+
+</div>
+
+</body>
+</html>

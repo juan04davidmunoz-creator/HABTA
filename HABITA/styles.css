@@ -1,0 +1,135 @@
+/* Paleta basada en el logo de Habita:
+   - Azul oscuro (texto principal): #0A2A43
+   - Azul vibrante (elementos principales): #1E90FF
+   - Amarillo / acento: #F2B01E
+   - Blanco: #FFFFFF
+   - Rojo de error (si hace falta): #E74C3C
+*/
+
+:root{
+  --azul-oscuro: #0b4068;
+  --azul: #0d4680;
+  --amarillo: #d1920b;
+  --blanco: #FFFFFF;
+  --error: #b65045;
+}
+
+*{box-sizing:border-box;}
+
+body {
+    background-color: var(--blanco);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--azul-oscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    background: linear-gradient(180deg, rgba(30,144,255,0.06), rgba(255,255,255,1));
+    padding: 28px;
+    border-radius: 12px;
+    width: 360px;
+    box-shadow: 0 8px 24px rgba(10,42,67,0.12);
+    text-align: center;
+}
+
+/* Logo */
+.logo{
+  margin: 0 auto 12px auto;
+  width: 160px;
+  height: auto;
+}
+.logo.small{ width: 110px; margin-bottom: 6px; }
+.logo img{ width: 100%; height: auto; display:block; margin: 0 auto; }
+
+/* Titulos */
+h2{
+    margin: 8px 0 18px 0;
+    font-size: 22px;
+    color: var(--azul-oscuro);
+}
+
+/* Formularios */
+label{
+    display:block;
+    text-align: left;
+    margin: 6px 0 4px 0;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"]{
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(10,42,67,0.12);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus{
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(30,144,255,0.08);
+}
+
+/* Botones */
+button.primary, .btn.primary{
+    width: 100%;
+    padding: 10px 14px;
+    background-color: var(--azul);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button.primary:hover, .btn.primary:hover{
+    filter: brightness(0.95);
+}
+
+.btn.secondary{
+    display:inline-block;
+    padding: 10px 14px;
+    background: transparent;
+    color: var(--azul-oscuro);
+    border: 1px solid rgba(10,42,67,0.1);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Links y ayudas */
+.link{ display:block; margin-top:14px; color: var(--azul); text-decoration: none; font-weight:600; }
+.link:hover{ opacity:0.9; }
+
+/* Row de acciones (checkbox + olvido) */
+.actions-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom: 6px;
+}
+.remember{ font-weight:500; font-size:13px; color:var(--azul-oscuro); display:flex; align-items:center; gap:6px; }
+.forgot{ color:var(--azul); font-size:13px; text-decoration:none; }
+
+/* Error box */
+.error-box{
+    background-color: #FFF3F3;
+    border: 1px solid rgba(231,76,60,0.12);
+}
+#errorMessage{ color: var(--error); }
+
+/* Acciones error */
+.error-actions{ display:flex; gap:10px; justify-content:center; margin-top:12px; }
