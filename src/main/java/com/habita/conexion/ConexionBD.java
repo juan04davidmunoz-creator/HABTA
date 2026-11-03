@@ -18,7 +18,7 @@ public class ConexionBD {
     public static Connection conectar() {
 
         if (USUARIO == null || CLAVE == null) {
-            System.out.println("Faltan las variables de conexi?n HABITA_DB_USER y HABITA_DB_PASSWORD.");
+            System.out.println("Faltan las variables de conexion HABITA_DB_USER y HABITA_DB_PASSWORD.");
             return null;
         }
 
