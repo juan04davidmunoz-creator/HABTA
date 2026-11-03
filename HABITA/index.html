@@ -1,108 +1,83 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Habita | Reservación de Habitaciones</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+:root{
+  --pino:#12403C; --pino-osc:#0B2B28; --niebla:#EEF3F1; --blanco:#fff;
+  --oro:#C9962B; --tinta:#14221F; --gris:#5C6B67; --linea:#D6E0DC;
+  --serif:"Fraunces",Georgia,serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--tinta);background:var(--blanco);line-height:1.6;font-size:1.0625rem}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
 
-<!-- TOPBAR -->
-<div class="topbar">
-    <p>📞 +57  311 4903953 | ✉️ contacto@habita.com</p>
-</div>
+/* barra superior */
+.topbar{background:var(--pino-osc);color:#cfe0dc;font-size:.875rem;text-align:right;padding:.5rem 0}
+.topbar p{width:min(1120px,100% - 2.5rem);margin-inline:auto}
 
-<!-- HEADER -->
-<header class="main-header">
-    <h1>Habita</h1>
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Habitaciones</a>
-        <a href="#">Reservas</a>
-        <a href="#">Contacto</a>
-    </nav>
-</header>
+/* encabezado */
+.main-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.main-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:1rem;gap:1rem;flex-wrap:wrap}
+.main-header h1{font-family:var(--serif);font-size:1.75rem;color:var(--pino);font-weight:700;letter-spacing:-.01em}
+.main-header nav{display:flex;gap:.25rem;flex-wrap:wrap}
+.main-header nav a{text-decoration:none;padding:.5rem .9rem;border-radius:999px;font-weight:500;color:var(--gris);transition:background .2s,color .2s}
+.main-header nav a:hover{background:var(--niebla);color:var(--pino)}
+.main-header nav a.activo{background:var(--pino);color:#fff}
 
-<!-- PRESENTACIÓN -->
-<section class="presentation">
-    <h2>Bienvenido a Habita</h2>
-    <p>
-        Habita es una plataforma web diseñada para facilitar la reservación de habitaciones
-        de hotel de manera rápida, segura y accesible desde cualquier dispositivo.
-    </p>
-    <img src="logo-habita.jpg" alt="Hotel Habita">
-</section>
+/* presentación */
+.presentation{background:var(--pino);color:#fff;padding:5rem 0 7rem}
+.presentation .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.presentation h2{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;font-weight:600;margin-bottom:1.25rem;letter-spacing:-.02em}
+.presentation p{color:#cfe0dc;max-width:46ch;margin-bottom:2rem}
+.btn{display:inline-block;background:var(--oro);color:var(--pino-osc);font-weight:700;text-decoration:none;padding:.9rem 1.75rem;border-radius:999px;border:0;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,background .2s}
+.btn:hover{background:#dba935;transform:translateY(-2px)}
+.presentation img{border-radius:1.5rem 1.5rem 1.5rem 6rem;aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 30px 60px rgba(0,0,0,.35);border:6px solid rgba(255,255,255,.12)}
 
-<!-- HABITACIONES -->
-<section class="rooms">
-    <h2>Nuestras Habitaciones</h2>
+/* formulario tipo buscador, montado sobre el hero */
+.booking{margin-top:-4rem;position:relative;z-index:2;padding-bottom:1rem}
+.booking .wrap{background:var(--blanco);border-radius:1.25rem;padding:2rem;box-shadow:0 20px 50px rgba(11,43,40,.18);border:1px solid var(--linea)}
+.booking h2{font-family:var(--serif);font-size:1.5rem;color:var(--pino);margin-bottom:1.25rem}
+.booking form{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:1rem;align-items:end}
+.campo{display:flex;flex-direction:column;gap:.35rem}
+.campo label{font-size:.875rem;font-weight:600;color:var(--gris)}
+.campo input{font:inherit;padding:.8rem .9rem;border:1.5px solid var(--linea);border-radius:.75rem;background:var(--niebla);color:var(--tinta);transition:border-color .2s,background .2s}
+.campo input:focus{outline:none;border-color:var(--pino);background:#fff}
 
-    <div class="room-cards">
-        <div class="room">
-            <h3>Habitación Sencilla</h3>
-            <p>Cómoda habitación para una persona.</p>
-        </div>
+/* secciones */
+section.rooms,section.process,section.benefits{padding:5rem 0}
+h2.titulo{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--pino);margin-bottom:.5rem;letter-spacing:-.01em}
+.subtitulo{color:var(--gris);margin-bottom:2.5rem;max-width:55ch}
 
-        <div class="room">
-            <h3>Habitación Doble</h3>
-            <p>Ideal para parejas o viajes familiares.</p>
-        </div>
+/* habitaciones: la premium destaca */
+.room-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+.room{background:var(--niebla);border-radius:1.25rem;padding:2rem;display:flex;flex-direction:column;gap:.75rem;border-top:6px solid var(--linea);transition:transform .2s}
+.room:hover{transform:translateY(-4px)}
+.room h3{font-family:var(--serif);font-size:1.4rem;color:var(--pino)}
+.room .meta{font-weight:600;font-size:.9rem;color:var(--gris)}
+.room.premium{background:var(--pino);color:#fff;border-top-color:var(--oro)}
+.room.premium h3{color:#fff}
+.room.premium .meta,.room.premium p{color:#cfe0dc}
 
-        <div class="room">
-            <h3>Habitación Premium</h3>
-            <p>Mayor confort con servicios exclusivos.</p>
-        </div>
-    </div>
-</section>
+/* proceso: sí es una secuencia, por eso va numerado */
+.process{background:var(--niebla)}
+.process ol{list-style:none;counter-reset:paso;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.process li{counter-increment:paso;background:#fff;border-radius:1rem;padding:1.5rem;font-weight:600;color:var(--pino);border:1px solid var(--linea)}
+.process li::before{content:counter(paso);display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--pino);color:#fff;font-family:var(--serif);margin-bottom:1rem}
 
-<!-- PROCESO -->
-<section class="process">
-    <h2>¿Cómo reservar?</h2>
-    <ol>
-        <li>Selecciona la habitación</li>
-        <li>Elige fechas disponibles</li>
-        <li>Confirma tus datos</li>
-        <li>Finaliza la reservación</li>
-    </ol>
-</section>
+/* beneficios */
+.benefits ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 2rem}
+.benefits li{padding:1rem 0 1rem 2.25rem;border-bottom:1px solid var(--linea);position:relative;font-weight:500}
+.benefits li::before{content:"";position:absolute;left:0;top:1.35rem;width:1.1rem;height:.6rem;border-left:3px solid var(--oro);border-bottom:3px solid var(--oro);transform:rotate(-45deg)}
 
-<!-- BENEFICIOS -->
-<section class="benefits">
-    <h2>Beneficios</h2>
-    <ul>
-        <li>Reservas 100% en línea</li>
-        <li>Disponibilidad en tiempo real</li>
-        <li>Confirmación inmediata</li>
-        <li>Acceso desde celular, tablet o PC</li>
-    </ul>
-</section>
+/* pie */
+footer{background:var(--pino-osc);color:#9fb8b3;text-align:center;padding:2rem 1rem;font-size:.9rem}
 
-<!-- FORMULARIO -->
-<section class="booking">
-    <h2>Formulario de Reservación</h2>
-
-    <form>
-        <label>Nombre completo</label>
-        <input type="text" placeholder="Ingrese su nombre">
-
-        <label>Correo electrónico</label>
-        <input type="email" placeholder="Ingrese su correo">
-
-        <label>Fecha de entrada</label>
-        <input type="date">
-
-        <label>Fecha de salida</label>
-        <input type="date">
-
-        <button type="submit">Reservar</button>
-    </form>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Habita | Proyecto académico SENA</p>
-</footer>
-
-</body>
-</html>
+/* adaptable */
+@media(max-width:900px){
+  .presentation .wrap,.room-cards,.process ol,.benefits ul{grid-template-columns:1fr}
+  .booking form{grid-template-columns:1fr 1fr}
+  .booking form .btn{grid-column:1/-1}
+  .presentation{padding:3.5rem 0 6rem}
+}
+@media(max-width:520px){.booking form{grid-template-columns:1fr}.topbar{text-align:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
