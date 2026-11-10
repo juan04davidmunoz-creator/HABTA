@@ -1,84 +1,419 @@
-/* Estilos de la pagina de inicio. Paleta del logo: azul oscuro, azul y amarillo. */
-:root{
-  --pino:#0b4068; --pino-osc:#072a45; --niebla:#EAF1F8; --blanco:#fff;
-  --oro:#d1920b; --tinta:#0A2A43; --gris:#5A6B7B; --linea:#D3DEEA;
-  --serif:"Fraunces",Georgia,serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+/* =====================================================
+   HABITA - SISTEMA DE GESTIÓN Y RESERVACIÓN
+   Hoja de estilos general
+   Autor: Juan David Muñoz López
+   ===================================================== */
+
+:root {
+    --azul-oscuro: #0A2A43;
+    --azul: #1E90FF;
+    --azul-claro: #EAF1F8;
+    --dorado: #F2B01E;
+    --blanco: #FFFFFF;
+    --gris: #5A6B7B;
+    --borde: #D3DEEA;
+    --rojo: #DC3545;
+    --verde: #198754;
+    --sombra: 0 8px 25px rgba(10, 42, 67, 0.12);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--tinta);background:var(--blanco);line-height:1.6;font-size:1.0625rem}
-img{max-width:100%;display:block}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
-.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
 
-/* barra superior */
-.topbar{background:var(--pino-osc);color:#cfe0f0;font-size:.875rem;text-align:right;padding:.5rem 0}
-.topbar p{width:min(1120px,100% - 2.5rem);margin-inline:auto}
-
-/* encabezado */
-.main-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
-.main-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:1rem;gap:1rem;flex-wrap:wrap}
-.main-header h1{font-family:var(--serif);font-size:1.75rem;color:var(--pino);font-weight:700;letter-spacing:-.01em}
-.main-header nav{display:flex;gap:.25rem;flex-wrap:wrap}
-.main-header nav a{text-decoration:none;padding:.5rem .9rem;border-radius:999px;font-weight:500;color:var(--gris);transition:background .2s,color .2s}
-.main-header nav a:hover{background:var(--niebla);color:var(--pino)}
-.main-header nav a.activo{background:var(--pino);color:#fff}
-
-/* presentación */
-.presentation{background:var(--pino);color:#fff;padding:5rem 0 7rem}
-.presentation .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
-.presentation h2{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;font-weight:600;margin-bottom:1.25rem;letter-spacing:-.02em}
-.presentation p{color:#cfe0f0;max-width:46ch;margin-bottom:2rem}
-.btn{display:inline-block;background:var(--oro);color:#072a45;font-weight:700;text-decoration:none;padding:.9rem 1.75rem;border-radius:999px;border:0;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,background .2s}
-.btn:hover{background:#e2a41c;transform:translateY(-2px)}
-.presentation img{border-radius:1.5rem 1.5rem 1.5rem 6rem;aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 30px 60px rgba(0,0,0,.35);border:6px solid rgba(255,255,255,.12)}
-
-/* formulario tipo buscador, montado sobre el hero */
-.booking{margin-top:-4rem;position:relative;z-index:2;padding-bottom:1rem}
-.booking .wrap{background:var(--blanco);border-radius:1.25rem;padding:2rem;box-shadow:0 20px 50px rgba(10,42,67,.18);border:1px solid var(--linea)}
-.booking h2{font-family:var(--serif);font-size:1.5rem;color:var(--pino);margin-bottom:1.25rem}
-.booking form{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:1rem;align-items:end}
-.campo{display:flex;flex-direction:column;gap:.35rem}
-.campo label{font-size:.875rem;font-weight:600;color:var(--gris)}
-.campo input{font:inherit;padding:.8rem .9rem;border:1.5px solid var(--linea);border-radius:.75rem;background:var(--niebla);color:var(--tinta);transition:border-color .2s,background .2s}
-.campo input:focus{outline:none;border-color:var(--pino);background:#fff}
-
-/* secciones */
-section.rooms,section.process,section.benefits{padding:5rem 0}
-h2.titulo{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--pino);margin-bottom:.5rem;letter-spacing:-.01em}
-.subtitulo{color:var(--gris);margin-bottom:2.5rem;max-width:55ch}
-
-/* habitaciones: la premium destaca */
-.room-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
-.room{background:var(--niebla);border-radius:1.25rem;padding:2rem;display:flex;flex-direction:column;gap:.75rem;border-top:6px solid var(--linea);transition:transform .2s}
-.room:hover{transform:translateY(-4px)}
-.room h3{font-family:var(--serif);font-size:1.4rem;color:var(--pino)}
-.room .meta{font-weight:600;font-size:.9rem;color:var(--gris)}
-.room.premium{background:var(--pino);color:#fff;border-top-color:var(--oro)}
-.room.premium h3{color:#fff}
-.room.premium .meta,.room.premium p{color:#cfe0f0}
-
-/* proceso: sí es una secuencia, por eso va numerado */
-.process{background:var(--niebla)}
-.process ol{list-style:none;counter-reset:paso;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.process li{counter-increment:paso;background:#fff;border-radius:1rem;padding:1.5rem;font-weight:600;color:var(--pino);border:1px solid var(--linea)}
-.process li::before{content:counter(paso);display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--pino);color:#fff;font-family:var(--serif);margin-bottom:1rem}
-
-/* beneficios */
-.benefits ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 2rem}
-.benefits li{padding:1rem 0 1rem 2.25rem;border-bottom:1px solid var(--linea);position:relative;font-weight:500}
-.benefits li::before{content:"";position:absolute;left:0;top:1.35rem;width:1.1rem;height:.6rem;border-left:3px solid var(--oro);border-bottom:3px solid var(--oro);transform:rotate(-45deg)}
-
-/* pie */
-footer{background:var(--pino-osc);color:#9db6cc;text-align:center;padding:2rem 1rem;font-size:.9rem}
-
-/* adaptable */
-@media(max-width:900px){
-  .presentation .wrap,.room-cards,.process ol,.benefits ul{grid-template-columns:1fr}
-  .booking form{grid-template-columns:1fr 1fr}
-  .booking form .btn{grid-column:1/-1}
-  .presentation{padding:3.5rem 0 6rem}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-@media(max-width:520px){.booking form{grid-template-columns:1fr}.topbar{text-align:center}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--azul-claro);
+    color: var(--azul-oscuro);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--azul);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* CONTENEDORES */
+
+.container {
+    width: min(92%, 650px);
+    margin: 45px auto;
+    padding: 30px;
+    background: var(--blanco);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.wrap {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+.card {
+    background: var(--blanco);
+    padding: 24px;
+    margin: 20px 0;
+    border-radius: 14px;
+    border: 1px solid var(--borde);
+    box-shadow: var(--sombra);
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo.small img {
+    width: 110px;
+}
+
+/* TITULOS */
+
+h1,
+h2,
+h3 {
+    color: var(--azul-oscuro);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+/* FORMULARIOS */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--azul-oscuro);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: #FAFCFF;
+    color: var(--azul-oscuro);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.12);
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* BOTONES */
+
+button,
+.primary,
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--azul);
+    color: var(--blanco);
+    border: none;
+    border-radius: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover,
+.primary:hover,
+.btn:hover {
+    background: var(--azul-oscuro);
+    transform: translateY(-2px);
+}
+
+.edit {
+    background: var(--dorado);
+    color: var(--azul-oscuro);
+}
+
+.delete {
+    background: var(--rojo);
+    color: var(--blanco);
+}
+
+/* ENLACES */
+
+.link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+/* MENÚ PRINCIPAL */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-grid .card {
+    text-align: center;
+}
+
+/* MENSAJES */
+
+.success-box {
+    background: #D1E7DD;
+    color: #0F5132;
+    border: 1px solid #BADBCC;
+    padding: 14px;
+    margin-top: 18px;
+    border-radius: 9px;
+}
+
+.error-box {
+    background: #F8D7DA;
+    color: #842029;
+    border: 1px solid #F5C2C7;
+    padding: 14px;
+    margin-top: 18px;
+    border-radius: 9px;
+}
+
+/* TABLAS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: var(--blanco);
+}
+
+th,
+td {
+    padding: 13px;
+    border-bottom: 1px solid var(--borde);
+    text-align: left;
+}
+
+th {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+tr:hover {
+    background: var(--azul-claro);
+}
+
+/* PÁGINA DE INICIO */
+
+.topbar {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 9px;
+    text-align: right;
+}
+
+.main-header {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px 0;
+}
+
+.main-header nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.main-header nav a {
+    color: var(--azul-oscuro);
+    font-weight: 600;
+}
+
+.presentation {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 65px 0;
+}
+
+.presentation .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.presentation h2 {
+    color: var(--blanco);
+    text-align: left;
+}
+
+.presentation p {
+    margin-bottom: 25px;
+}
+
+.presentation img {
+    border-radius: 18px;
+    width: 100%;
+}
+
+.booking,
+.rooms,
+.process,
+.benefits {
+    padding: 45px 0;
+}
+
+.booking form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+    gap: 15px;
+}
+
+.room-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.room {
+    background: var(--blanco);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid var(--borde);
+}
+
+.room.premium {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.room.premium h3 {
+    color: var(--dorado);
+}
+
+.process {
+    background: var(--blanco);
+}
+
+.process ol {
+    padding-left: 25px;
+}
+
+.benefits ul {
+    padding-left: 25px;
+}
+
+footer {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px;
+    margin-top: 35px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .menu-grid,
+    .room-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .presentation .wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .booking form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .menu-grid,
+    .room-cards,
+    .booking form {
+        grid-template-columns: 1fr;
+    }
+
+    .main-header .wrap {
+        flex-direction: column;
+    }
+
+    .main-header nav {
+        justify-content: center;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

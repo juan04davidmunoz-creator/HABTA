@@ -1,44 +1,54 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Reservas - Habita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de reservas HABITA">
+    <title>Reservar habitación | HABITA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
-        <img src="logo-habita.jpg" alt="Logo Habita">
-    </div>
+    <main class="container">
 
-<h2>Reservas</h2>
+        <div class="logo">
+            <img src="logo-habita.jpg" alt="Logo de HABITA">
+        </div>
 
-<div class="card">
-    <form id="reservaForm">
-        <label>Servicio:</label>
-        <select required>
-            <option value="">Seleccione un servicio</option>
-            <option>Servicio 1</option>
-            <option>Servicio 2</option>
-            <option>Servicio 3</option>
-        </select>
+        <h2>Reservar habitación</h2>
 
-        <label>Fecha:</label>
-        <input type="date" required>
+        <p>Complete los datos para realizar su solicitud de reserva.</p>
 
-        <label>Hora:</label>
-        <input type="time" required>
+        <div class="card">
+            <form id="reservaForm">
 
-        <button type="submit" class="primary">Confirmar Reserva</button>
-    </form>
-    <div class="success-box">Reserva realizada con éxito.</div>
-</div>
+                <label for="servicio">Tipo de habitación</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Seleccione una habitación</option>
+                    <option value="Sencilla">Habitación sencilla</option>
+                    <option value="Doble">Habitación doble</option>
+                    <option value="Premium">Habitación premium</option>
+                </select>
 
-<a href="menu.html" class="link">Volver al Menú</a>
+                <label for="fecha">Fecha de entrada</label>
+                <input type="date" id="fecha" name="fecha" required>
 
-</div>
+                <label for="hora">Hora de llegada</label>
+                <input type="time" id="hora" name="hora" required>
 
+                <button type="submit" class="primary">
+                    Confirmar reserva
+                </button>
+
+            </form>
+        </div>
+
+        <a href="menu.html" class="link">Volver al menú principal</a>
+        <a href="index.html" class="link">Volver al inicio</a>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

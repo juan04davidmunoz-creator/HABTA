@@ -1,41 +1,60 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Menú - Habita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menú principal del sistema HABITA">
+    <title>Menú principal | HABITA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
-        <img src="logo-habita.jpg" alt="Logo Habita">
-    </div>
+    <main class="container">
 
-<h2>Menú Principal</h2>
+        <div class="logo">
+            <img src="logo-habita.jpg" alt="Logo de HABITA">
+        </div>
 
-<div class="card">
-    <h3>Reservas</h3>
-    <p>Accede para hacer o ver tus reservas.</p>
-    <button class="primary" onclick="location.href='reservas.html'">Ir a Reservas</button>
-</div>
+        <h2>Menú principal</h2>
 
-<div class="card">
-    <h3>Perfil</h3>
-    <p>Consulta y edita tu información personal.</p>
-    <button class="primary" onclick="location.href='perfil.html'">Ir a Perfil</button>
-</div>
+        <p>Bienvenido al sistema de gestión y reservación de habitaciones HABITA.</p>
 
-<div class="card">
-    <h3>Historial</h3>
-    <p>Revisa tus reservas pasadas y su estado.</p>
-    <button class="primary" onclick="location.href='historial.html'">Ver Historial</button>
-</div>
+        <section class="menu-grid">
 
-<a href="login.html" class="link">Cerrar sesión</a>
+            <article class="card">
+                <h3>Reservas</h3>
+                <p>Realiza nuevas solicitudes de reserva.</p>
+                <button type="button" class="primary"
+                    onclick="location.href='reservas.html'">
+                    Ir a reservas
+                </button>
+            </article>
 
-</div>
+            <article class="card">
+                <h3>Mi perfil</h3>
+                <p>Consulta y actualiza tu información personal.</p>
+                <button type="button" class="primary"
+                    onclick="location.href='perfil.html'">
+                    Ir a perfil
+                </button>
+            </article>
+
+            <article class="card">
+                <h3>Historial</h3>
+                <p>Consulta tus reservas y sus estados.</p>
+                <button type="button" class="primary"
+                    onclick="location.href='historial.html'">
+                    Ver historial
+                </button>
+            </article>
+
+        </section>
+
+        <a href="index.html" class="link">Volver al inicio</a>
+        <a href="login.html" class="link">Cerrar sesión</a>
+
+    </main>
 
 </body>
 </html>

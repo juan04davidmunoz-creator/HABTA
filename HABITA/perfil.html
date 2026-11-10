@@ -1,38 +1,65 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil - Habita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil de usuario del sistema HABITA">
+    <title>Mi perfil | HABITA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
-        <img src="logo-habita.jpg" alt="Logo Habita">
-    </div>
+    <main class="container">
 
-<h2>Perfil de Usuario</h2>
+        <div class="logo">
+            <img src="logo-habita.jpg" alt="Logo de HABITA">
+        </div>
 
-<div class="card">
-    <form id="perfilForm">
-        <label>Nombre:</label>
-        <input type="text" value="Juan David Muñoz Lopez" required>
+        <h2>Mi perfil</h2>
+        <p>Consulta tu información personal.</p>
 
-        <label>Email:</label>
-        <input type="email" value="juanlopez@email.com" required>
+        <section class="card">
+            <form id="perfilForm">
 
-        <label>Contraseña:</label>
-        <input type="password" value="********" required>
+                <label for="nombre">Nombre completo:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value="Juan David Muñoz López"
+                    required
+                >
 
-        <button type="submit" class="primary">Guardar Cambios</button>
-    </form>
-</div>
+                <label for="correo">Correo electrónico:</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    value="juanlopez@email.com"
+                    required
+                >
 
-<a href="menu.html" class="link">Volver al Menú</a>
+                <label for="contrasena">Nueva contraseña (opcional):</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    placeholder="Dejar en blanco para no cambiarla"
+                    autocomplete="new-password"
+                >
 
-</div>
+                <button type="submit" class="primary">
+                    Guardar cambios
+                </button>
 
+            </form>
+        </section>
+
+        <a href="menu.html" class="link">Volver al menú</a>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
