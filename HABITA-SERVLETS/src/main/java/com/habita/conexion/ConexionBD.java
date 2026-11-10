@@ -1,4 +1,3 @@
-```java
 package com.habita.conexion;
 
 import java.sql.Connection;
@@ -36,4 +35,3 @@ public class ConexionBD {
         return DriverManager.getConnection(URL, usuario, clave);
     }
 }
-```
