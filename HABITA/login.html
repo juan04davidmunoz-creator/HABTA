@@ -1,38 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pantalla de Login - Habita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inicio de sesión del sistema HABITA">
+    <title>Iniciar sesión | HABITA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
-        <img src="logo-habita.jpg" alt="Logo Habita">
-    </div>
+    <main class="container">
 
-    <h2>Iniciar Sesión</h2>
-
-    <form id="loginForm">
-        <label>Usuario</label>
-        <input type="text" id="usuario" placeholder="Ingrese su usuario" required>
-
-        <label>Contraseña</label>
-        <input type="password" id="password" placeholder="Ingrese su contraseña" required>
-
-        <div class="actions-row">
-          <label class="remember">
-            <input type="checkbox" id="remember"> Recordarme
-          </label>
-          <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+        <div class="logo small">
+            <img src="logo-habita.jpg" alt="Logo de HABITA">
         </div>
 
-        <button type="submit" class="primary">Ingresar</button>
-    </form>
+        <h2>Iniciar sesión</h2>
 
-    <a href="registro.html" class="link">Crear cuenta</a>
-</div>
+        <p>Bienvenido al sistema de gestión y reservación de habitaciones.</p>
 
-<script src="script.js"></script>
-<
+        <form id="loginForm">
+
+            <label for="usuario">Usuario o correo electrónico</label>
+            <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                placeholder="Ingrese su usuario"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">Contraseña</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Ingrese su contraseña"
+                autocomplete="current-password"
+                required
+            >
+
+            <label>
+                <input type="checkbox" id="recordar">
+                Recordar mi sesión
+            </label>
+
+            <button type="submit" class="primary">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <p class="link">
+            ¿No tienes una cuenta?
+            <a href="registro.html">Regístrate aquí</a>
+        </p>
+
+        <a href="index.html" class="link">Volver al inicio</a>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,82 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Paleta de Colores - Habita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paleta de colores | HABITA</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 40px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #f5f5f5;
+            background: #EAF1F8;
+            color: #0A2A43;
         }
 
         h1 {
-            color: #333;
+            text-align: center;
         }
 
         .palette {
             display: grid;
-            grid-template-columns: repeat(5, 100px);
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 25px;
+            width: 100%;
+            max-width: 650px;
             margin-top: 30px;
         }
 
+        .color-item {
+            text-align: center;
+        }
+
         .color {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
             border: 2px solid #ddd;
+            margin: auto;
         }
 
         .label {
-            text-align: center;
-            margin-top: 5px;
+            margin-top: 10px;
             font-size: 14px;
+            font-weight: bold;
         }
     </style>
-
 </head>
 <body>
 
-<h1>Paleta de Colores – Habita</h1>
+    <h1>Paleta de colores HABITA</h1>
 
-<div class="palette">
+    <p>Identidad visual del sistema de gestión y reservación de habitaciones.</p>
 
-    <!-- Azul principal logo -->
-    <div>
-        <div class="color" style="background:#0A2257;"></div>
-        <div class="label">#0A2257</div>
+    <div class="palette">
+
+        <div class="color-item">
+            <div class="color" style="background:#0A2A43;"></div>
+            <div class="label">Azul oscuro</div>
+            <div>#0A2A43</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color" style="background:#1E90FF;"></div>
+            <div class="label">Azul principal</div>
+            <div>#1E90FF</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color" style="background:#EAF1F8;"></div>
+            <div class="label">Azul claro</div>
+            <div>#EAF1F8</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color" style="background:#F2B01E;"></div>
+            <div class="label">Dorado</div>
+            <div>#F2B01E</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color" style="background:#FFFFFF;"></div>
+            <div class="label">Blanco</div>
+            <div>#FFFFFF</div>
+        </div>
+
     </div>
-
-    <!-- Azul claro -->
-    <div>
-        <div class="color" style="background:#1C85E8;"></div>
-        <div class="label">#1C85E8</div>
-    </div>
-
-    <!-- Azul intermedio -->
-    <div>
-        <div class="color" style="background:#74B5FB;"></div>
-        <div class="label">#74B5FB</div>
-    </div>
-
-    <!-- Verde del logo -->
-    <div>
-        <div class="color" style="background:#3CC15D;"></div>
-        <div class="label">#3CC15D</div>
-    </div>
-
-    <!-- Amarillo check -->
-    <div>
-        <div class="color" style="background:#FDBB18;"></div>
-        <div class="label">#FDBB18</div>
-    </div>
-
-</div>
 
 </body>
 </html>
