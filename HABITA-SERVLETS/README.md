@@ -1,71 +1,46 @@
-﻿
-# HABITA - Servicio web de autenticación
+﻿# HABITA - Sistema de Gestión y Reservación de Habitaciones
 
-## Evidencia SENA
-GA7-220501096-AA5-EV01 - Diseño y desarrollo de servicios web.
-
-## Autor
-Juan David Muñoz López
+## Evidencia GA7-220501096-AA5-EV03
+**Aprendiz:** Juan David Muñoz López
 
 ## Descripción
-Desarrollo de un servicio web REST para el registro de usuarios y la autenticación mediante correo electrónico y contraseña, conectado a una base de datos PostgreSQL.
+HABITA es un sistema de gestión y reservación de habitaciones que permite administrar usuarios, habitaciones, reservas y pagos mediante servicios web REST.
 
 ## Tecnologías utilizadas
 - Java 21
-- Jakarta Servlets 6.0
-- Maven
+- Jakarta Servlet 6.0
+- Apache Maven
 - Apache Tomcat 10.1
 - PostgreSQL
-- BCrypt para protección de contraseñas
-- Jackson para procesamiento JSON
-- Postman para pruebas
+- Jackson
+- BCrypt
+- Postman
 
-## Funcionalidades
-- Registro de nuevos usuarios.
-- Validación de los datos recibidos.
-- Verificación de correos registrados.
-- Almacenamiento de contraseñas mediante hash BCrypt.
-- Inicio de sesión con correo y contraseña.
-- Respuesta de autenticación satisfactoria o error de autenticación.
-- Respuestas HTTP y JSON.
+## Servicios web REST
 
-## Servicios disponibles
+| Módulo | Método | Endpoint | Función |
+|---|---|---|---|
+| Autenticación | POST | /api/auth/registro | Registrar usuarios |
+| Autenticación | POST | /api/auth/login | Iniciar sesión |
+| Habitaciones | GET | /api/habitaciones | Consultar habitaciones |
+| Habitaciones | POST | /api/habitaciones | Registrar habitaciones |
+| Reservas | GET | /api/reservas | Consultar reservas |
+| Reservas | POST | /api/reservas | Registrar reservas |
+| Pagos | GET | /api/pagos | Consultar pagos |
+| Pagos | POST | /api/pagos | Registrar pagos |
 
-### Registrar usuario
-POST `/HABITA/api/auth/registro`
-
-Ejemplo:
-```json
-{
-  "nombre": "Usuario Prueba",
-  "correo": "prueba.aa5@habita.com",
-  "contrasena": "Habita2026*"
-}
-```
-
-### Iniciar sesión
-POST `/HABITA/api/auth/login`
-
-Ejemplo:
-```json
-{
-  "correo": "prueba.aa5@habita.com",
-  "contrasena": "Habita2026*"
-}
-```
+## Configuración local
+1. Instalar Java 21, Maven, PostgreSQL y Apache Tomcat 10.1.
+2. Crear la base de datos `habita_db`.
+3. Configurar las variables de entorno `HABITA_DB_USER` y `HABITA_DB_PASSWORD`.
+4. Ejecutar `mvn clean package`.
+5. Desplegar `target/HABITA.war` en Tomcat.
 
 ## Pruebas realizadas
-- Registro exitoso de usuario.
-- Inicio de sesión con credenciales correctas.
-- Rechazo de inicio de sesión con contraseña incorrecta.
+Se verificaron las consultas GET de habitaciones, reservas y pagos. También se realizaron pruebas de registro e inicio de sesión del módulo de autenticación.
 
-## Ejecución
-1. Configurar PostgreSQL y la base de datos `habita_db`.
-2. Configurar las variables `HABITA_DB_USER` y `HABITA_DB_PASSWORD`.
-3. Ejecutar `mvn clean package`.
-4. Copiar `target/HABITA.war` a la carpeta `webapps` de Tomcat.
-5. Iniciar Tomcat.
-6. Probar los servicios mediante Postman.
+## Documentación
+Consultar el documento Word correspondiente a la evidencia GA7-220501096-AA5-EV03.
 
 ## Repositorio
-Consultar el archivo `enlace_repositorio.txt`.
+https://github.com/juan04davidmunoz-creator/HABTA/tree/ga7-220501096-aa5-ev03-servicios-web
