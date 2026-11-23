@@ -1,0 +1,7 @@
+target/
+*.respaldo
+*.log
+.idea/
+.vscode/
+*.iml
+.env
