@@ -10,12 +10,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Acceso a datos de usuarios para el servicio de autenticación.
+ * Acceso a datos de usuarios para el servicio de autenticaciÃ³n.
  */
 public class UsuarioAuthDAO {
 
     /**
-     * Busca un usuario por su correo electrónico.
+     * Busca un usuario por su correo electrÃ³nico.
      */
     public UsuarioAuth buscarPorCorreo(String correo) throws SQLException {
 
@@ -55,7 +55,7 @@ public class UsuarioAuthDAO {
 
         String sql = """
             INSERT INTO usuarios (nombre, correo, contrasena, id_rol)
-            VALUES (?, ?, ?, 1)
+            VALUES (?, ?, ?, 2)
             """;
 
         try (Connection conexion = ConexionBD.conectar();
@@ -69,3 +69,4 @@ public class UsuarioAuthDAO {
         }
     }
 }
+

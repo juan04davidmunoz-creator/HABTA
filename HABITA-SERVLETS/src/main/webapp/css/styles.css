@@ -103,3 +103,64 @@ th, td {
         font-size: 12px;
     }
 }
+
+/* ESTILOS DE LA PAGINA PRINCIPAL HABITA */
+
+.inicio {
+    text-align: center;
+}
+
+.inicio > p {
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.menu-inicio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.opcion-inicio {
+    background: #f2f5f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.opcion-inicio h3 {
+    color: #0A2A43;
+    margin-bottom: 15px;
+}
+
+.opcion-inicio p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.opcion-inicio a {
+    display: inline-block;
+    background: #0A2A43;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.opcion-inicio a:hover {
+    background: #1E90FF;
+}
+
+.pie-pagina {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .menu-inicio {
+        grid-template-columns: 1fr;
+    }
+}
